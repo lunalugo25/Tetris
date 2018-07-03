@@ -8,26 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		B41747FB20EB13F500A58C8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41747FA20EB13F500A58C8A /* AppDelegate.swift */; };
-		B41747FD20EB13F500A58C8A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B41747FC20EB13F500A58C8A /* GameScene.sks */; };
-		B41747FF20EB13F500A58C8A /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B41747FE20EB13F500A58C8A /* Actions.sks */; };
-		B417480120EB13F500A58C8A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417480020EB13F500A58C8A /* GameScene.swift */; };
-		B417480320EB13F500A58C8A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417480220EB13F500A58C8A /* GameViewController.swift */; };
-		B417480620EB13F500A58C8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B417480420EB13F500A58C8A /* Main.storyboard */; };
+		B417480320EB13F500A58C8A /* GameCourtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417480220EB13F500A58C8A /* GameCourtView.swift */; };
+		B417480620EB13F500A58C8A /* GameCourt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B417480420EB13F500A58C8A /* GameCourt.storyboard */; };
 		B417480820EB140500A58C8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B417480720EB140500A58C8A /* Assets.xcassets */; };
 		B417480B20EB140500A58C8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B417480920EB140500A58C8A /* LaunchScreen.storyboard */; };
+		B417481320EB163A00A58C8A /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417481220EB163A00A58C8A /* Piece.swift */; };
+		B417481920EB29E000A58C8A /* GameCourtPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417481820EB29E000A58C8A /* GameCourtPresenter.swift */; };
+		B417481B20EB2A4300A58C8A /* GameCourtProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417481A20EB2A4300A58C8A /* GameCourtProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B41747F720EB13F500A58C8A /* Tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41747FA20EB13F500A58C8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B41747FC20EB13F500A58C8A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		B41747FE20EB13F500A58C8A /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		B417480020EB13F500A58C8A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		B417480220EB13F500A58C8A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		B417480520EB13F500A58C8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B417480220EB13F500A58C8A /* GameCourtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCourtView.swift; sourceTree = "<group>"; };
+		B417480520EB13F500A58C8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GameCourt.storyboard; sourceTree = "<group>"; };
 		B417480720EB140500A58C8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B417480A20EB140500A58C8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B417480C20EB140500A58C8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B417481220EB163A00A58C8A /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		B417481820EB29E000A58C8A /* GameCourtPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCourtPresenter.swift; sourceTree = "<group>"; };
+		B417481A20EB2A4300A58C8A /* GameCourtProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCourtProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +60,33 @@
 		B41747F920EB13F500A58C8A /* Tetris */ = {
 			isa = PBXGroup;
 			children = (
+				B417481520EB298B00A58C8A /* View */,
 				B41747FA20EB13F500A58C8A /* AppDelegate.swift */,
-				B41747FC20EB13F500A58C8A /* GameScene.sks */,
-				B41747FE20EB13F500A58C8A /* Actions.sks */,
-				B417480020EB13F500A58C8A /* GameScene.swift */,
-				B417480220EB13F500A58C8A /* GameViewController.swift */,
-				B417480420EB13F500A58C8A /* Main.storyboard */,
 				B417480720EB140500A58C8A /* Assets.xcassets */,
 				B417480920EB140500A58C8A /* LaunchScreen.storyboard */,
 				B417480C20EB140500A58C8A /* Info.plist */,
+				B417481220EB163A00A58C8A /* Piece.swift */,
 			);
 			path = Tetris;
+			sourceTree = "<group>";
+		};
+		B417481420EB290300A58C8A /* GameCourt */ = {
+			isa = PBXGroup;
+			children = (
+				B417480220EB13F500A58C8A /* GameCourtView.swift */,
+				B417481820EB29E000A58C8A /* GameCourtPresenter.swift */,
+				B417481A20EB2A4300A58C8A /* GameCourtProtocols.swift */,
+				B417480420EB13F500A58C8A /* GameCourt.storyboard */,
+			);
+			path = GameCourt;
+			sourceTree = "<group>";
+		};
+		B417481520EB298B00A58C8A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B417481420EB290300A58C8A /* GameCourt */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,11 +147,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B417480620EB13F500A58C8A /* Main.storyboard in Resources */,
-				B41747FD20EB13F500A58C8A /* GameScene.sks in Resources */,
+				B417480620EB13F500A58C8A /* GameCourt.storyboard in Resources */,
 				B417480820EB140500A58C8A /* Assets.xcassets in Resources */,
 				B417480B20EB140500A58C8A /* LaunchScreen.storyboard in Resources */,
-				B41747FF20EB13F500A58C8A /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,21 +160,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B417480120EB13F500A58C8A /* GameScene.swift in Sources */,
-				B417480320EB13F500A58C8A /* GameViewController.swift in Sources */,
+				B417480320EB13F500A58C8A /* GameCourtView.swift in Sources */,
 				B41747FB20EB13F500A58C8A /* AppDelegate.swift in Sources */,
+				B417481920EB29E000A58C8A /* GameCourtPresenter.swift in Sources */,
+				B417481B20EB2A4300A58C8A /* GameCourtProtocols.swift in Sources */,
+				B417481320EB163A00A58C8A /* Piece.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B417480420EB13F500A58C8A /* Main.storyboard */ = {
+		B417480420EB13F500A58C8A /* GameCourt.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B417480520EB13F500A58C8A /* Base */,
 			);
-			name = Main.storyboard;
+			name = GameCourt.storyboard;
 			sourceTree = "<group>";
 		};
 		B417480920EB140500A58C8A /* LaunchScreen.storyboard */ = {
