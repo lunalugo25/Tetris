@@ -77,8 +77,7 @@
 			children = (
 				BEB802EF20F12FD0002D7907 /* GameCourt */,
 			);
-			name = View;
-			path = "New Group";
+			path = View;
 			sourceTree = "<group>";
 		};
 		BEB802EF20F12FD0002D7907 /* GameCourt */ = {
@@ -98,8 +97,7 @@
 			children = (
 				BEB8030720F13092002D7907 /* Constants.swift */,
 			);
-			name = BaseClasses;
-			path = "New Group";
+			path = BaseClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
