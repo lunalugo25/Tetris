@@ -10,8 +10,15 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameCourtViewController: UIViewController {
+class GameCourtViewController: UIViewController, GameCourtViewProtocol {
+
+    var presenter: GameCourtPresenterProtocol?
 
     @IBOutlet var collectionView: UICollectionView!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        presenter?.viewDidLoad()
+    }
 }

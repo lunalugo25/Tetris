@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+final class GameCourtPresenter: GameCourtPresenterProtocol {
+
+    weak var view:  GameCourtViewProtocol?
+}

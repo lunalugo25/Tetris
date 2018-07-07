@@ -17,11 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let storyBoard = UIStoryboard(name: "GameCourt", bundle: nil)
-        let gameCourt = storyBoard.instantiateViewController(withIdentifier: "GameCourtViewController")
-//        let gameCourt = UIViewController()
 
-        let nav = UINavigationController(rootViewController: gameCourt)
+        var viewController = UIViewController()
+        if let gameCourt = GameCourtWireFrame.createModule() as? GameCourtViewController {
+
+            viewController = gameCourt
+        }
+
+        let nav = UINavigationController(rootViewController: viewController)
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = nav

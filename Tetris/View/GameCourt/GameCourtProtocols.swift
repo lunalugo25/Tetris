@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+protocol GameCourtWireframeProtocol {
+    static func createModule() -> GameCourtViewProtocol
+}
+
+// MARK: - View -> Presenter
+protocol GameCourtPresenterProtocol: PresenterProtocol {
+
+    weak var view: GameCourtViewProtocol? { get set }
+}
+
+// MARK: - PRESENTER -> VIEW
+protocol GameCourtViewProtocol: ViewProtocol {
+
+    var presenter: GameCourtPresenterProtocol? { get set }
+}
