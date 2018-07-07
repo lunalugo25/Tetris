@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Tetris
 //
-//  Created by jorge luna on 7/2/18.
-//  Copyright © 2018 Jorge Luna. All rights reserved.
+//  Created by Luna, Jorge on 7/7/18.
+//  Copyright © 2018 Luna, Jorge. All rights reserved.
 //
 
 import UIKit
@@ -19,10 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let storyBoard = UIStoryboard(name: "GameCourt", bundle: nil)
         let gameCourt = storyBoard.instantiateViewController(withIdentifier: "GameCourtViewController")
+//        let gameCourt = UIViewController()
 
-        window?.rootViewController = gameCourt
+        let nav = UINavigationController(rootViewController: gameCourt)
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
 
+        window?.backgroundColor = .blue
+        
         return true
     }
 
