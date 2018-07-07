@@ -10,7 +10,8 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameCourtView: UIViewController {
+class GameCourtViewController: UIViewController {
 
-    
+    @IBOutlet var collectionView: UICollectionView!
+
 }
