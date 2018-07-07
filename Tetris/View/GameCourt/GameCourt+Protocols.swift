@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol GameCourtWireframeProtocol {
-    static func createModule() -> GameCourtViewProtocol
+protocol GameCourtRouterProtocol {
+    static func createVIPER() -> GameCourtViewProtocol
 }
 
 // MARK: - View -> Presenter
@@ -22,4 +22,6 @@ protocol GameCourtPresenterProtocol: PresenterProtocol {
 protocol GameCourtViewProtocol: ViewProtocol {
 
     var presenter: GameCourtPresenterProtocol? { get set }
+
+    func setViewModel(_ viewModel: [[DrawableCollectionCellProtocol]])
 }

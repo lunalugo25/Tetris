@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
         var viewController = UIViewController()
-        if let gameCourt = GameCourtWireFrame.createModule() as? GameCourtViewController {
+        if let gameCourt = GameCourtRouter.createVIPER() as? GameCourtViewController {
 
             viewController = gameCourt
         }
@@ -29,8 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
-
-        window?.backgroundColor = .blue
         
         return true
     }

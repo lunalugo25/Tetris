@@ -9,16 +9,18 @@
 /* Begin PBXBuildFile section */
 		BE1DB21120F124EC00671D91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DB21020F124EC00671D91 /* AppDelegate.swift */; };
 		BE1DB21820F124EC00671D91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE1DB21720F124EC00671D91 /* Assets.xcassets */; };
+		BE28F52820F15498002D14F9 /* DrawableCollectionCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28F52720F15498002D14F9 /* DrawableCollectionCellProtocol.swift */; };
+		BE28F52A20F15858002D14F9 /* GameCourtViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28F52920F15858002D14F9 /* GameCourtViewCell.swift */; };
 		BEB802ED20F12F4B002D7907 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB802EC20F12F4B002D7907 /* LaunchScreen.storyboard */; };
 		BEB802FF20F13021002D7907 /* GameCourt+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB802FA20F13020002D7907 /* GameCourt+Constants.swift */; };
 		BEB8030020F13021002D7907 /* GameCourtPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB802FB20F13020002D7907 /* GameCourtPresenter.swift */; };
 		BEB8030120F13021002D7907 /* GameCourtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB802FC20F13020002D7907 /* GameCourtViewController.swift */; };
-		BEB8030320F13021002D7907 /* GameCourtProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB802FE20F13021002D7907 /* GameCourtProtocols.swift */; };
+		BEB8030320F13021002D7907 /* GameCourt+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB802FE20F13021002D7907 /* GameCourt+Protocols.swift */; };
 		BEB8030520F13046002D7907 /* GameCourt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB8030420F13045002D7907 /* GameCourt.storyboard */; };
 		BEB8030820F13092002D7907 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB8030720F13092002D7907 /* Constants.swift */; };
 		BEBEA68220F140300067A388 /* PresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEA68120F140300067A388 /* PresenterProtocol.swift */; };
 		BEBEA68420F141420067A388 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEA68320F141420067A388 /* ViewProtocol.swift */; };
-		BEBEA68620F1450B0067A388 /* GameCourtWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEA68520F1450B0067A388 /* GameCourtWireFrame.swift */; };
+		BEBEA68620F1450B0067A388 /* GameCourtRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBEA68520F1450B0067A388 /* GameCourtRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,16 +28,18 @@
 		BE1DB21020F124EC00671D91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE1DB21720F124EC00671D91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE1DB21C20F124EC00671D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE28F52720F15498002D14F9 /* DrawableCollectionCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableCollectionCellProtocol.swift; sourceTree = "<group>"; };
+		BE28F52920F15858002D14F9 /* GameCourtViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCourtViewCell.swift; sourceTree = "<group>"; };
 		BEB802EC20F12F4B002D7907 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEB802FA20F13020002D7907 /* GameCourt+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GameCourt+Constants.swift"; path = "Tetris/View/GameCourt/GameCourt+Constants.swift"; sourceTree = SOURCE_ROOT; };
 		BEB802FB20F13020002D7907 /* GameCourtPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCourtPresenter.swift; path = Tetris/View/GameCourt/GameCourtPresenter.swift; sourceTree = SOURCE_ROOT; };
 		BEB802FC20F13020002D7907 /* GameCourtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCourtViewController.swift; path = Tetris/View/GameCourt/GameCourtViewController.swift; sourceTree = SOURCE_ROOT; };
-		BEB802FE20F13021002D7907 /* GameCourtProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCourtProtocols.swift; path = Tetris/View/GameCourt/GameCourtProtocols.swift; sourceTree = SOURCE_ROOT; };
+		BEB802FE20F13021002D7907 /* GameCourt+Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GameCourt+Protocols.swift"; path = "Tetris/View/GameCourt/GameCourt+Protocols.swift"; sourceTree = SOURCE_ROOT; };
 		BEB8030420F13045002D7907 /* GameCourt.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GameCourt.storyboard; path = Tetris/View/GameCourt/GameCourt.storyboard; sourceTree = SOURCE_ROOT; };
 		BEB8030720F13092002D7907 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Tetris/BaseClasses/Constants.swift; sourceTree = SOURCE_ROOT; };
 		BEBEA68120F140300067A388 /* PresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterProtocol.swift; sourceTree = "<group>"; };
 		BEBEA68320F141420067A388 /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
-		BEBEA68520F1450B0067A388 /* GameCourtWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCourtWireFrame.swift; sourceTree = "<group>"; };
+		BEBEA68520F1450B0067A388 /* GameCourtRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCourtRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,12 +93,13 @@
 		BEB802EF20F12FD0002D7907 /* GameCourt */ = {
 			isa = PBXGroup;
 			children = (
-				BEB8030420F13045002D7907 /* GameCourt.storyboard */,
 				BEB802FA20F13020002D7907 /* GameCourt+Constants.swift */,
-				BEB802FB20F13020002D7907 /* GameCourtPresenter.swift */,
-				BEB802FE20F13021002D7907 /* GameCourtProtocols.swift */,
+				BEB802FE20F13021002D7907 /* GameCourt+Protocols.swift */,
+				BEB8030420F13045002D7907 /* GameCourt.storyboard */,
+				BE28F52920F15858002D14F9 /* GameCourtViewCell.swift */,
 				BEB802FC20F13020002D7907 /* GameCourtViewController.swift */,
-				BEBEA68520F1450B0067A388 /* GameCourtWireFrame.swift */,
+				BEB802FB20F13020002D7907 /* GameCourtPresenter.swift */,
+				BEBEA68520F1450B0067A388 /* GameCourtRouter.swift */,
 			);
 			path = GameCourt;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 				BEB8030720F13092002D7907 /* Constants.swift */,
 				BEBEA68120F140300067A388 /* PresenterProtocol.swift */,
 				BEBEA68320F141420067A388 /* ViewProtocol.swift */,
+				BE28F52720F15498002D14F9 /* DrawableCollectionCellProtocol.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -184,12 +190,14 @@
 				BE1DB21120F124EC00671D91 /* AppDelegate.swift in Sources */,
 				BEB8030020F13021002D7907 /* GameCourtPresenter.swift in Sources */,
 				BEBEA68420F141420067A388 /* ViewProtocol.swift in Sources */,
+				BE28F52820F15498002D14F9 /* DrawableCollectionCellProtocol.swift in Sources */,
 				BEB8030120F13021002D7907 /* GameCourtViewController.swift in Sources */,
-				BEB8030320F13021002D7907 /* GameCourtProtocols.swift in Sources */,
+				BEB8030320F13021002D7907 /* GameCourt+Protocols.swift in Sources */,
 				BEB802FF20F13021002D7907 /* GameCourt+Constants.swift in Sources */,
 				BEB8030820F13092002D7907 /* Constants.swift in Sources */,
 				BEBEA68220F140300067A388 /* PresenterProtocol.swift in Sources */,
-				BEBEA68620F1450B0067A388 /* GameCourtWireFrame.swift in Sources */,
+				BE28F52A20F15858002D14F9 /* GameCourtViewCell.swift in Sources */,
+				BEBEA68620F1450B0067A388 /* GameCourtRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

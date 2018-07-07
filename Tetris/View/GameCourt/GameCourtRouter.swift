@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class GameCourtWireFrame: GameCourtWireframeProtocol {
+final class GameCourtRouter: GameCourtRouterProtocol {
 
-    static func createModule() -> GameCourtViewProtocol {
+    static func createVIPER() -> GameCourtViewProtocol {
 
         let storyBoard = UIStoryboard(name: "GameCourt", bundle: nil)
         let view = storyBoard.instantiateViewController(withIdentifier: "GameCourtViewController") as! GameCourtViewProtocol
