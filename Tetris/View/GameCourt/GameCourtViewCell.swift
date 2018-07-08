@@ -26,12 +26,14 @@ struct GameCourtViewCellModel: DrawableCollectionCellProtocol {
 
 class GameCourtViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var cellColor: UIView!
+
     override func prepareForReuse() {
-        backgroundColor = .clear
+        cellColor.backgroundColor = .clear
     }
 
     func configure(color: UIColor) {
 
-        backgroundColor = color
+        cellColor.backgroundColor = color
     }
 }

@@ -54,3 +54,27 @@ extension GameCourtViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
+extension GameCourtViewController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let cellWidth = collectionView.frame.width/CGFloat(viewModel.first?.count ?? 1)
+        let cellHeight = collectionView.frame.height/CGFloat(viewModel.count)
+
+        let minSide = min(cellWidth, cellHeight)
+
+        print("collectionView: \(collectionView.frame.size), cellFrame: [\(cellWidth):\(cellHeight)] -> cellSize: [\(minSide):\(minSide)]")
+
+        return CGSize(width: minSide, height: minSide)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+
+        return 0
+    }
+}
