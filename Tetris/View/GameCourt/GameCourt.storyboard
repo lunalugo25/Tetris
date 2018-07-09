@@ -19,8 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XDv-F3-zpX">
-                                <rect key="frame" x="16" y="140" width="343" height="511"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="16" y="140" width="250" height="511"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="MRu-Y2-wZb"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="26v-em-wpA">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -64,16 +67,17 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="XDv-F3-zpX" secondAttribute="bottom" constant="16" id="GhB-OK-jBI"/>
                             <constraint firstItem="XDv-F3-zpX" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="16" id="vym-f7-j8X"/>
-                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="XDv-F3-zpX" secondAttribute="trailing" constant="16" id="wOh-zW-BnI"/>
                             <constraint firstItem="XDv-F3-zpX" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="120" id="xcL-1P-FtH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="XDv-F3-zpX" id="5fz-1y-SIX"/>
+                        <outlet property="gridWidthConstraint" destination="MRu-Y2-wZb" id="PwS-QM-Cmx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>

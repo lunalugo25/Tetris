@@ -23,5 +23,5 @@ protocol GameCourtViewProtocol: ViewProtocol {
 
     var presenter: GameCourtPresenterProtocol? { get set }
 
-    func setViewModel(_ viewModel: [[DrawableCollectionCellProtocol]])
+    func setViewModel(_ newViewModel: [[DrawableCollectionCellProtocol]])
 }
