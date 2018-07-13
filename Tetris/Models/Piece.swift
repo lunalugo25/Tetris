@@ -9,6 +9,7 @@
 import Foundation
 
 typealias PieceRepresentation = ([[Bool]])
+typealias PieceBlocks = ([IndexPath])
 
 enum PieceType {
     case line
@@ -115,6 +116,20 @@ enum PieceType {
                     [true]]             //X
         }
     }
+
+    func space(for direction: PieceDirection) -> IndexPath {
+        switch (self, direction)  {
+        case (.line, .up):      return IndexPath(row: -1, section:  1)
+        case (.line, .right):   return IndexPath(row:  2, section: -1)
+        case (.line, .down):    return IndexPath(row: -2, section:  2)
+        case (.line, .left):    return IndexPath(row: -2, section: -2)
+
+        case (.jay, .right):    return IndexPath(row:  1, section:  0)
+        case (.jay, .down):     return IndexPath(row: -1, section:  1)
+        case (.jay, .left):     return IndexPath(row:  0, section: -1)
+        default:                return IndexPath(row:  0, section:  0)
+        }
+    }
 }
 
 enum PieceDirection {
@@ -125,6 +140,52 @@ enum PieceDirection {
 }
 
 struct Piece {
-    var representation: PieceRepresentation
+    let type: PieceType
+    var direction: PieceDirection
     var position: IndexPath
+
+    func getBlocks(for position: IndexPath) -> PieceBlocks {
+
+        var blocks: PieceBlocks = []
+
+        let representable = type.get(for: direction)
+
+        var indexSection = 0
+        for column in representable {
+
+            for (indexRow, row) in column.enumerated() {
+                if row {
+
+                    blocks.append(IndexPath(row: position.row + indexRow,
+                                            section: position.section + indexSection))
+                }
+            }
+            indexSection += 1
+        }
+
+        return blocks
+    }
+}
+
+extension Piece {
+    init(type: PieceType) {
+        self.type = type
+        self.direction = .up
+        self.position = IndexPath(row: 0, section: 0)
+    }
+
+    mutating func rotate() {
+
+        let space = type.space(for: direction)
+
+        position = IndexPath(row:      max(space.row + position.row,0),
+                             section:  space.section + position.section)
+
+        switch direction {
+        case .up:     direction = .right
+        case .right:  direction = .down
+        case .down:   direction = .left
+        case .left:   direction = .up
+        }
+    }
 }

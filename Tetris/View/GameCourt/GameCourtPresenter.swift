@@ -15,29 +15,43 @@ final class GameCourtPresenter: GameCourtPresenterProtocol {
     weak var view:  GameCourtViewProtocol?
 
     private var gridCourt = GridSize.zero
+    private var piece = Piece(type: .jay)
 
     func viewDidAppear() {
 
-        var rows  = [[DrawableCollectionCellProtocol]]()
+        gridCourt = GridSize(columns: GameCourt.width, rows: GameCourt.height)
 
-        gridCourt = GridSize(columns: GameCourt.height, rows: GameCourt.width)
-
-        for row in 0..<GameCourt.height {
-
-            var columns = [DrawableCollectionCellProtocol]()
-            let rowColor: UIColor = row%2 == 0 ? .blue: .red
-
-            for column in 0..<GameCourt.width {
+        drawGrid()
 
 
-                let columnColor: UIColor = column%2 == 0 ? rowColor.darker: rowColor.lighter
-//                columns.append(GameCourtViewCellModel(color: columnColor))
-                columns.append(GameCourtViewCellModel(color: .darkGray))
-            }
+        for time in 0...10 {
 
-            rows.append(columns)
+            DispatchQueue.main.asyncAfter(deadline: .after(TimeInterval(time)), execute: {
+                self.drawGrid()
+//                self.piece.position.section += 1
+                self.piece.rotate()
+//                if time%2 == 0 {
+//                    self.piece.rotate()
+//                }
+            })
         }
 
-        view?.setViewModel(rows)
+    }
+
+    private func drawGrid() {
+
+        var baseGrid = gridCourt.getBaseGrid(with: .red)
+
+        baseGrid = drawPiece(in: baseGrid)
+
+        view?.setViewModel(baseGrid)
+    }
+
+    private func drawPiece(in gridCourt: GridCourt) -> GridCourt{
+        var gridReturned = gridCourt
+        piece.getBlocks(for: piece.position).forEach { (block) in
+            gridReturned[block.section][block.row] = GameCourtViewCellModel(color: .blue)
+        }
+        return gridReturned
     }
 }
