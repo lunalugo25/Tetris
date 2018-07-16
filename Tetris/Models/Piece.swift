@@ -59,17 +59,17 @@ enum PieceType {
                     [true,  true]]  //XX
 
         case (.el, .right):
-            return [[true],                     //X
-                    [true,  true,  true]]       //XXX
+            return [[true,  true,  true],   //XXX
+                    [true]]                 //X
 
         case (.el, .down):
-            return [[true,   true],     //OX
+            return [[true,   true],     //XX
                     [false,  true],     //OX
-                    [false,  true]]     //XX
+                    [false,  true]]     //OX
 
         case (.el, .left):
-            return [[true,   true,   true],     //XXX
-                    [false,  false,  true]]     //OOX
+            return [[false, false,  true],  //OOX
+                    [true,  true,   true]]  //XXX
 
         case (.square, _):
             return [[true,true],    //XX
@@ -117,6 +117,11 @@ enum PieceType {
         }
     }
 
+    func width(for direction: PieceDirection) -> Int {
+
+        return get(for: direction).map { $0.count }.max() ?? 0
+    }
+
     func space(for direction: PieceDirection) -> IndexPath {
         switch (self, direction)  {
         case (.line, .up):      return IndexPath(row: -1, section:  1)
@@ -127,6 +132,23 @@ enum PieceType {
         case (.jay, .right):    return IndexPath(row:  1, section:  0)
         case (.jay, .down):     return IndexPath(row: -1, section:  1)
         case (.jay, .left):     return IndexPath(row:  0, section: -1)
+
+        case (.el, .up):        return IndexPath(row: -1, section:  1)
+        case (.el, .right):     return IndexPath(row:  0, section: -1)
+        case (.el, .left):      return IndexPath(row:  1, section:  0)
+
+        case (.es, .up):        return IndexPath(row:  0, section: -1)
+        case (.es, .down):      return IndexPath(row:  1, section:  0)
+        case (.es, .left):      return IndexPath(row: -1, section:  1)
+
+        case (.ti, .up):        return IndexPath(row:  0, section: -1)
+        case (.ti, .down):      return IndexPath(row:  1, section:  0)
+        case (.ti, .left):      return IndexPath(row: -1, section:  1)
+
+        case (.zeta, .up):      return IndexPath(row:  0, section: -1)
+        case (.zeta, .down):    return IndexPath(row:  1, section:  0)
+        case (.zeta, .left):    return IndexPath(row: -1, section:  1)
+
         default:                return IndexPath(row:  0, section:  0)
         }
     }
@@ -142,7 +164,15 @@ enum PieceDirection {
 struct Piece {
     let type: PieceType
     var direction: PieceDirection
-    var position: IndexPath
+    var currentPosition: IndexPath
+}
+
+extension Piece {
+    init(type: PieceType) {
+        self.type = type
+        self.direction = .up
+        self.currentPosition = IndexPath(row: 0, section: 0)
+    }
 
     func getBlocks(for position: IndexPath) -> PieceBlocks {
 
@@ -165,21 +195,13 @@ struct Piece {
 
         return blocks
     }
-}
-
-extension Piece {
-    init(type: PieceType) {
-        self.type = type
-        self.direction = .up
-        self.position = IndexPath(row: 0, section: 0)
-    }
 
     mutating func rotate() {
 
         let space = type.space(for: direction)
 
-        position = IndexPath(row:      max(space.row + position.row,0),
-                             section:  space.section + position.section)
+        currentPosition = IndexPath(row:      max(space.row + currentPosition.row, 0),
+                             section:  max(space.section + currentPosition.section, 0))
 
         switch direction {
         case .up:     direction = .right

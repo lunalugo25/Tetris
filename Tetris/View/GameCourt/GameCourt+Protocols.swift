@@ -6,7 +6,12 @@
 //  Copyright © 2018 Jorge Luna. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+enum ViewSide {
+    case left
+    case right
+}
 
 protocol GameCourtRouterProtocol {
     static func createVIPER() -> GameCourtViewProtocol
@@ -16,9 +21,16 @@ protocol GameCourtRouterProtocol {
 protocol GameCourtPresenterProtocol: PresenterProtocol {
 
     weak var view: GameCourtViewProtocol? { get set }
+
+    func didTapRotate()
+    func didSwipeLeft()
+    func didSwipeRight()
+    func didSwipeDown()
+
+    func didInitDrag(in position: CGFloat)
 }
 
-// MARK: - PRESENTER -> VIEW
+// MARK: - Presenter -> View
 protocol GameCourtViewProtocol: ViewProtocol {
 
     var presenter: GameCourtPresenterProtocol? { get set }

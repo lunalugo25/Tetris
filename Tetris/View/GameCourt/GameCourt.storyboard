@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XDv-F3-zpX">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XDv-F3-zpX">
                                 <rect key="frame" x="16" y="140" width="250" height="511"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -66,10 +66,25 @@
                                     <outlet property="delegate" destination="BV1-FR-VrT" id="Fcw-qS-rn4"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdC-Wp-ETB">
+                                <rect key="frame" x="16" y="140" width="250" height="511"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="KzJ-Dg-3NS" appends="YES" id="KI1-Eo-y54"/>
+                                    <outletCollection property="gestureRecognizers" destination="g8i-h9-ewP" appends="YES" id="ips-lV-bA9"/>
+                                    <outletCollection property="gestureRecognizers" destination="BSQ-Ya-dri" appends="YES" id="5IU-Wg-CcQ"/>
+                                    <outletCollection property="gestureRecognizers" destination="LeV-JM-lGA" appends="YES" id="Tt7-a3-sfx"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="wdC-Wp-ETB" firstAttribute="top" secondItem="XDv-F3-zpX" secondAttribute="top" id="5ZS-fh-gXJ"/>
+                            <constraint firstItem="wdC-Wp-ETB" firstAttribute="trailing" secondItem="XDv-F3-zpX" secondAttribute="trailing" id="7A1-sy-m8r"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="XDv-F3-zpX" secondAttribute="bottom" constant="16" id="GhB-OK-jBI"/>
+                            <constraint firstItem="wdC-Wp-ETB" firstAttribute="bottom" secondItem="XDv-F3-zpX" secondAttribute="bottom" id="Rfw-h9-Xwf"/>
+                            <constraint firstItem="wdC-Wp-ETB" firstAttribute="leading" secondItem="XDv-F3-zpX" secondAttribute="leading" id="vN2-qB-U63"/>
                             <constraint firstItem="XDv-F3-zpX" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="16" id="vym-f7-j8X"/>
                             <constraint firstItem="XDv-F3-zpX" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="120" id="xcL-1P-FtH"/>
                         </constraints>
@@ -81,6 +96,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="KzJ-Dg-3NS">
+                    <connections>
+                        <action selector="didSwipe:" destination="BV1-FR-VrT" id="5VC-A9-WRY"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="g8i-h9-ewP">
+                    <connections>
+                        <action selector="didSwipe:" destination="BV1-FR-VrT" id="zsa-rf-mSV"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer id="BSQ-Ya-dri">
+                    <connections>
+                        <action selector="didRotate:" destination="BV1-FR-VrT" id="as1-pT-z2H"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="LeV-JM-lGA">
+                    <connections>
+                        <action selector="didDrag:" destination="BV1-FR-VrT" id="3sK-JI-Zre"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>

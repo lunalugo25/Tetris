@@ -35,6 +35,40 @@ class GameCourtViewController: UIViewController, GameCourtViewProtocol {
         presenter?.viewDidAppear()
     }
 
+    @IBAction func didSwipe(_ sender: Any) {
+
+        if let swipe = sender as? UISwipeGestureRecognizer {
+
+            switch swipe.direction {
+            case .left:     presenter?.didSwipeLeft()
+            case .right:    presenter?.didSwipeRight()
+            default:        break
+            }
+        }
+    }
+
+    @IBAction func didRotate(_ sender: Any) {
+
+        presenter?.didTapRotate()
+    }
+
+    @IBAction func didDrag(_ recognizer: UIPanGestureRecognizer) {
+
+        let translation = recognizer.translation(in: recognizer.view)
+        let velocity = recognizer.velocity(in: recognizer.view)
+        let state = recognizer.state
+
+
+        switch recognizer.state {
+        case .began:
+            let location = recognizer.location(in: recognizer.view)
+            presenter?.didInitDrag(in: location.x/(recognizer.view?.frame.width ?? 1))
+        default:
+
+            print("State: \(state), translation: \(translation), velocity: \(velocity)")
+        }
+    }
+
     func setViewModel(_ newViewModel: [[DrawableCollectionCellProtocol]]) {
 
         gridSize = GridSize(columns: newViewModel.count, rows: newViewModel.first?.count ?? 1)
@@ -90,5 +124,19 @@ extension GameCourtViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 
         return 0
+    }
+}
+
+
+extension UIGestureRecognizerState: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .possible:     return "possible"
+        case .began:        return "began"
+        case .changed:      return "changed"
+        case .ended:        return "ended"
+        case .cancelled:    return "cancelled"
+        case .failed:       return "failed"
+        }
     }
 }

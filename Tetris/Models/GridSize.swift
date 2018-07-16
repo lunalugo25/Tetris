@@ -34,4 +34,15 @@ struct GridSize {
         }
         return baseGrid
     }
+
+    func contains(_ blocks: PieceBlocks) -> Bool {
+
+        for block in blocks {
+            if block.row < 0 || block.row >= columns {
+                return false
+            }
+        }
+
+        return true
+    }
 }
